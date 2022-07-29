@@ -84,7 +84,8 @@ func CamelString(s string) string {
 func SnakeString(s string) string {
 	data := make([]byte, 0, len(s)*2)
 	j := false
-	for _, d := range Str2Bytes(s) {
+	for i := range s {
+		d := s[i]
 		if d >= 'A' && d <= 'Z' {
 			if j {
 				data = append(data, '_')
